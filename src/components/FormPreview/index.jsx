@@ -89,20 +89,22 @@ const FormPreview = () => {
           {(formFields || []).length
             ? formFields.map((field, index) => (
                 <div className="form_preview_field" key={index}>
-                  <div>
+                  <div className="form_preview_field_label">
                     <label>{field.label}</label>
-                    {field.type !== FIELD_TYPES.dropdown ? (
-                      <input
-                        value={formValues[field.id] || ""}
-                        onChange={(event) => handleInputChange(event, field)}
-                        name={field.fieldName || field.label}
-                        type={field.type}
-                        placeholder="Enter value"
-                        required={field.validations?.isRequired}
-                      />
-                    ) : (
-                      getDropdown(field)
-                    )}
+                    <div className="form_preview_field_input">
+                      {field.type !== FIELD_TYPES.dropdown ? (
+                        <input
+                          value={formValues[field.id] || ""}
+                          onChange={(event) => handleInputChange(event, field)}
+                          name={field.fieldName || field.label}
+                          type={field.type}
+                          placeholder="Enter value"
+                          required={field.validations?.isRequired}
+                        />
+                      ) : (
+                        getDropdown(field)
+                      )}
+                    </div>
                   </div>
                   {!isFieldValid(field) ? (
                     <span className="error-message">

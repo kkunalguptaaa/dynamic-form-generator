@@ -36,8 +36,18 @@
   gap: 0.2rem;
 }
 
-.form_preview_field label {
+.form_preview_field_label {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.form_preview_field_label label {
   margin-right: 1.5rem;
+  grid-column: 1;
+}
+
+.form_preview_field_input {
+  grid-column: 2;
 }
 
 .form_preview_container input,
@@ -54,4 +64,13 @@
 
 .btn-submit {
   margin-top: 1.5rem;
+}
+
+label {
+  grid-column: 1 / 2;
+}
+
+input,
+button {
+  grid-column: 2 / 3;
 }
