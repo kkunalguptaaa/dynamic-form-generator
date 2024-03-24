@@ -2,6 +2,8 @@
 
 This is a dynamic form generator created with React, it helps users to create forms dynamically using the interface.
 
+[Open the project in codesandbox](https://codesandbox.io/p/github/kkunalguptaaa/dynamic-form-generator)
+
 
 ## Installation
 
